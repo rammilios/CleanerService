@@ -3,7 +3,6 @@ package ru.innopolis.stc13.repository.dao;
 import ru.innopolis.stc13.repository.connectionManager.ConnectionManager;
 import ru.innopolis.stc13.repository.connectionManager.ConnectionManagerJdbcImpl;
 import ru.innopolis.stc13.repository.pojo.Order;
-
 import javax.management.Query;
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ public class OrderDaoImpl implements OrderDao {
                      SQLMobile.INSERT.QUERY)) {
             preparedStatement.setInt(1, order.getOrder_id());
             preparedStatement.setString(2, order.getOrder_status());
-            preparedStatement.setDouble(3, order.getPrice());
+            preparedStatement.setInt(3, order.getPrice());
             preparedStatement.setString(4, order.getPaid());
             preparedStatement.setString(5, order.getComments());
             result = preparedStatement.executeQuery().next();
@@ -42,9 +41,9 @@ public class OrderDaoImpl implements OrderDao {
                 Order order = new Order(
                         resultSet.getInt(1),
                         resultSet.getString(2),
-                        resultSet.getDouble(3),
                         resultSet.getString(4),
-                        resultSet.getString(5));
+                        resultSet.getString(5),
+                        resultSet.getInt(3));
                 return order;
             }
         } catch (SQLException e) {
@@ -60,9 +59,9 @@ public class OrderDaoImpl implements OrderDao {
                      SQLMobile.UPDATE.QUERY)) {
             preparedStatement.setInt(1, order.getOrder_id());
             preparedStatement.setString(2, order.getOrder_status());
-            preparedStatement.setDouble(3, order.getPrice());
             preparedStatement.setString(4, order.getPaid());
             preparedStatement.setString(5, order.getComments());
+            preparedStatement.setInt(3, order.getPrice());
             preparedStatement.execute();
             return true;
         } catch (SQLException e) {
@@ -91,15 +90,15 @@ public class OrderDaoImpl implements OrderDao {
         try (Connection connection = connectionManager.getConnection();
              Statement statement = connection.createStatement()) {
 
-            try (ResultSet resultSet = statement.executeQuery("SELECT * FROM \"orders\"")) {
+            try (ResultSet resultSet = statement.executeQuery("SELECT * FROM orders")) {
                 result = new ArrayList<>();
                 while (resultSet.next()) {
                     result.add(new Order(
-                            resultSet.getInt(1),
-                            resultSet.getString(2),
-                            resultSet.getDouble(3),
-                            resultSet.getString(4),
-                            resultSet.getString(5)));
+                            resultSet.getInt("order_id"),
+                            resultSet.getString("order_status"),
+                            resultSet.getString("paid"),
+                            resultSet.getString("comments"),
+                            resultSet.getInt("price")));
 
                 }
             } catch (Exception e) {

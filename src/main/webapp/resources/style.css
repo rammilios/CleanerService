@@ -68,7 +68,8 @@ body {
 -----------------------------------------------------------------------------*/
 .header {
 	height: 150px;
-	background: #FFE680;
+	background: #39c9dc;
+	padding: 0px 240px;
 }
 
 
@@ -111,6 +112,7 @@ body {
 	width: 1000px;
 	margin: -100px auto 0;
 	height: 100px;
-	background: #BFF08E;
+	background: #39c9dc;
 	position: relative;
+	padding: 0px 250px;
 }

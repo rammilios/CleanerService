@@ -3,11 +3,11 @@ package ru.innopolis.stc13.repository.pojo;
 public class Order {
     private Integer order_id;
     private String order_status;
-    private Double price;
+    private Integer price;
     private String paid;
     private String comments;
 
-    public Order(Integer order_id, String order_status, Double price, String paid, String comments) {
+    public Order(Integer order_id, String order_status, String paid, String comments, Integer price) {
         this.order_id = order_id;
         this.order_status = order_status;
         this.price = price;
@@ -31,11 +31,11 @@ public class Order {
         this.order_status = order_status;
     }
 
-    public Double getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 

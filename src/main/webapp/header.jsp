@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -14,7 +15,7 @@
 <div class="wrapper">
 
     <header class="header">
-        <strong>HEEEAAADEEEERRR</strong>
+        <strong>Добро пожаловать!</strong>
 
     </header><!-- .header-->
 

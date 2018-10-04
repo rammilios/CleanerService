@@ -1,4 +1,5 @@
 <%@ page import="ru.innopolis.stc13.repository.pojo.Order" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: user
@@ -7,20 +8,30 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="header.jsp"%>
 <html>
 <head>
     <title>Orders</title>
 </head>
 <body>
-<H1>Orders in queue: </H1>
-<%
+<table>
+    <caption>Orders in queue: </caption>
+    <tr>
+        <th>ID заказа</th>
+        <th>Статус заказа</th>
+        <th>Стоимость заказа</th>
+        <th>Статус оплаты</th>
+        <th>Комментарии к заказу</th>
+    </tr>
+    <%
     List<Order> list = (List<Order>) request.getAttribute("orders");
     for (Order order : list) {%>
-<%=order.getOrder_id()%>"><%=order.getOrder_status()%><%=order.getPrice()%>
-<%=order.getPaid()%><%=order.getComments()%>
+    <tr><td><%=order.getOrder_id()%></td> <td><%=order.getOrder_status()%></td> <td><%=order.getPrice()%></td>
+    <td><%=order.getPaid()%></td> <td><%=order.getComments()%><br></td> </tr>
 <%
     }
 %>
-<a href="/newOrder">New Order</a>
+</table>
 </body>
 </html>
+<%@include file="footer.jsp"%>
