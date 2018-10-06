@@ -5,12 +5,14 @@ public class User {
     private String login;
     private String password;
     private int role;
+    private String name;
 
-    public User(int user_id, String login, String password, int role) {
+    public User(int user_id, String login, String password, int role, String name) {
         this.user_id = user_id;
         this.login = login;
         this.password = password;
         this.role = role;
+        this.name = name;
     }
 
     public int getUser_id() {
@@ -45,6 +47,14 @@ public class User {
         this.role = role;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -52,6 +62,7 @@ public class User {
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", role=" + role +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

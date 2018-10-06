@@ -56,7 +56,7 @@ body {
 	height: 100%;
 }
 .wrapper {
-	width: 1000px;
+	width: 100%;
 	margin: 0 auto;
 	min-height: 100%;
 	height: auto !important;
@@ -109,10 +109,11 @@ body {
 /* Footer
 -----------------------------------------------------------------------------*/
 .footer {
-	width: 1000px;
+	width: 100%;
+	text-align: center;
 	margin: -100px auto 0;
-	height: 100px;
+	height: 150px;
 	background: #39c9dc;
 	position: relative;
-	padding: 0px 250px;
+	padding: 0px 240px;
 }

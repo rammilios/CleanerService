@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface OrderService {
     List<Order> getOrderList();
+
+    int addOrder(String comments, String adress);
+
+    boolean checkStatus(String comments, String adress);
 }

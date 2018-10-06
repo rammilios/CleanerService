@@ -24,4 +24,9 @@ public class OrderServlet extends HttpServlet {
         req.setAttribute("orders", res);
         req.getRequestDispatcher("/orders.jsp").forward(req, resp);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/orders.jsp").forward(req, resp);
+    }
 }

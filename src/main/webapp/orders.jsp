@@ -22,12 +22,14 @@
         <th>Стоимость заказа</th>
         <th>Статус оплаты</th>
         <th>Комментарии к заказу</th>
+        <th>Адресс клиента</th>
     </tr>
     <%
     List<Order> list = (List<Order>) request.getAttribute("orders");
     for (Order order : list) {%>
-    <tr><td><%=order.getOrder_id()%></td> <td><%=order.getOrder_status()%></td> <td><%=order.getPrice()%></td>
-    <td><%=order.getPaid()%></td> <td><%=order.getComments()%><br></td> </tr>
+    <tr><td><%=order.getOrder_id()%></td> <td><%=order.getOrder_status()%></td>
+        <td><%=order.getPrice()%></td><td><%=order.getPaid()%></td>
+        <td><%=order.getComments()%><br></td> <td><%=order.getAdress()%><br></td></tr>
 <%
     }
 %>

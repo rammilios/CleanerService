@@ -45,8 +45,9 @@ public class LoginServiceImpl implements LoginService {
         return false;
     }
 
+
+
     public static void main(String[] args) {
         System.out.println(UtilMD5.md5Custom("1111"));
-
     }
 }

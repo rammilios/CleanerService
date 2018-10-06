@@ -5,7 +5,7 @@ import ru.innopolis.stc13.repository.pojo.Order;
 import java.util.List;
 
 public interface OrderDao {
-    public boolean addOrder(Order order);
+    public int addOrder(Order order);
 
     public Order getOrderById(Integer orderId);
 

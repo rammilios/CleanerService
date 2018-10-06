@@ -16,7 +16,13 @@
 
     <header class="header">
         <strong>Добро пожаловать!</strong>
-
+        <div>
+            <%if (request.getSession().getAttribute("login") != null){%>
+            Вы вошли как: <%=request.getSession().getAttribute("login")%>
+            &nbsp;<a href="/login?action=logout">Выйти</a>
+            <%
+                }%>
+        </div>
     </header><!-- .header-->
 
     <div class="middle">
