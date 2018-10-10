@@ -44,6 +44,15 @@
         <url-pattern>/inner/dashBoard</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>register</servlet-name>
+        <servlet-class>ru.innopolis.stc13.controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>register</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>InnerFilter</filter-name>
         <filter-class>ru.innopolis.stc13.controller.filters.InnerFilter</filter-class>

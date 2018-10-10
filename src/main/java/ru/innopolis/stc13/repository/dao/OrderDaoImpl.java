@@ -3,7 +3,6 @@ package ru.innopolis.stc13.repository.dao;
 import ru.innopolis.stc13.repository.connectionManager.ConnectionManager;
 import ru.innopolis.stc13.repository.connectionManager.ConnectionManagerJdbcImpl;
 import ru.innopolis.stc13.repository.pojo.Order;
-import javax.management.Query;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
